@@ -2,17 +2,30 @@ Files:
 
   interactive: 
     a command that you can source to get a command line prompt
-    in the interactive queue on a compute node
+    in the interactive partition on a compute node
 
     usage:
 
       source interactive
 
+
+  reservation: 
+    a command that you can source to get a command line prompt
+    in the interactive partition on a compute node. unlike the
+    command above, this one uses the comp 422/534 course reservation.
+
+    usage:
+
+      source reservation
+
   submit.sbatch:
     a script that you can use to launch a batch job that will execute 
-    a series of tests on 1..16 cores on a compute node
+    a series of tests on 1..16 cores on a compute node. currently, this
+    submission file is configured to use the reserved nodes in the
+    interactive partition. you might get faster turnaround time with 
+    either the scavenge or commons partitions. 
 
-    you can modify this code to run your code multiple times with different lookahead depths
+    you can modify this script to run your code multiple times with different lookahead depths
     using cilkview to collect scalability and performance metrics.
 
     usage:

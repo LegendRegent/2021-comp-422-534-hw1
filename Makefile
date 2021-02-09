@@ -35,16 +35,16 @@ runp:
 	$(XX) ./$(EXEC)  < $(I)
 
 #run the serial version of your program
-runs:
+runs: $(EXEC)-serial
 	@echo use make runs I=input_file 
 	./$(EXEC)-serial < $(I)
 
 #run the optimized program in with cilkscreen
-screen:
+screen: $(EXEC)
 	cilkscreen ./$(EXEC) < screen_input
 
 #run the optimized program in with cilkview
-view:
+view: $(EXEC)
 	cilkview ./$(EXEC) < $I
 
 
